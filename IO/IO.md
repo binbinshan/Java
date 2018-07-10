@@ -325,7 +325,7 @@ public static void fastCopy(String src, String dist) throws IOException
 
 因为创建和切换线程的开销很大，因此使用一个线程来处理多个事件而不是一个线程处理一个事件具有更好的性能。
 
-<div align="center"> <img src="../pics//4d930e22-f493-49ae-8dff-ea21cd6895dc.png"/> </div><br>
+![](https://github.com/TrueOr/Java/raw/master/IO/pics/4d930e22-f493-49ae-8dff-ea21cd6895dc.png)
 
 ### 1. 创建选择器
 

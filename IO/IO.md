@@ -52,7 +52,7 @@ public static void copyFile(String src, String dist) throws IOException
 }
 ```
 
-<div align="center"> <img src="../pics//DP-Decorator-java.io.png" width="500"/> </div><br>
+<div align="center"> <img src="../IO/pics/DP-Decorator-java.io.png" width="500"/> </div><br>
 
 Java I/O 使用了装饰者模式来实现。以 InputStream 为例，InputStream 是抽象组件，FileInputStream 是 InputStream 的子类，属于具体组件，提供了字节流的输入操作。FilterInputStream 属于抽象装饰者，装饰者用于装饰组件，为组件提供额外的功能，例如 BufferedInputStream 为 FileInputStream 提供缓存的功能。
 
@@ -211,7 +211,7 @@ public static void main(String[] args) throws IOException
 - Socket：客户端类
 - 服务器和客户端通过 InputStream 和 OutputStream 进行输入输出。
 
-<div align="center"> <img src="../pics//ClienteServidorSockets1521731145260.jpg"/> </div><br>
+<div align="center"> <img src="../IO/pics//ClienteServidorSockets1521731145260.jpg"/> </div><br>
 
 ## Datagram
 
@@ -277,23 +277,23 @@ I/O 包和 NIO 已经很好地集成了，java.io.\* 已经以 NIO 为基础重�
 
 ① 新建一个大小为 8 个字节的缓冲区，此时 position 为 0，而 limit = capacity = 8。capacity 变量不会改变，下面的讨论会忽略它。
 
-<div align="center"> <img src="../pics//1bea398f-17a7-4f67-a90b-9e2d243eaa9a.png"/> </div><br>
+<div align="center"> <img src="../IO/pics//1bea398f-17a7-4f67-a90b-9e2d243eaa9a.png"/> </div><br>
 
 ② 从输入通道中读取 5 个字节数据写入缓冲区中，此时 position 移动设置为 5，limit 保持不变。
 
-<div align="center"> <img src="../pics//80804f52-8815-4096-b506-48eef3eed5c6.png"/> </div><br>
+<div align="center"> <img src="../IO/pics//80804f52-8815-4096-b506-48eef3eed5c6.png"/> </div><br>
 
 ③ 在将缓冲区的数据写到输出通道之前，需要先调用 flip() 方法，这个方法将 limit 设置为当前 position，并将 position 设置为 0。
 
-<div align="center"> <img src="../pics//952e06bd-5a65-4cab-82e4-dd1536462f38.png"/> </div><br>
+<div align="center"> <img src="../IO/pics//952e06bd-5a65-4cab-82e4-dd1536462f38.png"/> </div><br>
 
 ④ 从缓冲区中取 4 个字节到输出缓冲中，此时 position 设为 4。
 
-<div align="center"> <img src="../pics//b5bdcbe2-b958-4aef-9151-6ad963cb28b4.png"/> </div><br>
+<div align="center"> <img src="../IO/pics//b5bdcbe2-b958-4aef-9151-6ad963cb28b4.png"/> </div><br>
 
 ⑤ 最后需要调用 clear() 方法来清空缓冲区，此时 position 和 limit 都被设置为最初位置。
 
-<div align="center"> <img src="../pics//67bf5487-c45d-49b6-b9c0-a058d8c68902.png"/> </div><br>
+<div align="center"> <img src="../IO/pics//67bf5487-c45d-49b6-b9c0-a058d8c68902.png"/> </div><br>
 
 ## 文件 NIO 实例
 

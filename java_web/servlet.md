@@ -56,15 +56,15 @@ service(ServletRequest req, ServletResponse res)方法
 
 #### ServletConfig ServletContext
 ##### ServletConfig对象
-      获取途径：getServletConfig();<br>
-      getServletName();  //获取servlet的名称，也就是我们在web.xml中配置的servlet-name 
-      getServletContext(); //获取ServletContext对象，该对象的作用看下面讲解
-      getInitParameter(String); //获取在servlet中初始化参数的值。这里注意与全局初始化参数的区分。这个获取的只是在该servlet下的初始化参数
-      ![](https://github.com/TrueOr/java/raw/master/java_web/picture/874710-20170216195140550-371826071.png)<br>
-      getInitParameterNames(); //获取在Servlet中所有初始化参数的名字，也就是key值，可以通过key值，来找到各个初始化参数的value值。注意返回的是枚举类型
-      ![](https://github.com/TrueOr/java/raw/master/java_web/picture/874710-20170217091747144-810654839.png)<br>
-      ![](https://github.com/TrueOr/java/raw/master/java_web/picture/874710-20170217091914597-1623014325.png)<br>
-      ![](https://github.com/TrueOr/java/raw/master/java_web/picture/874710-20170217091935300-1981582648.png)<br>
+获取途径：getServletConfig();<br>
+  getServletName();  //获取servlet的名称，也就是我们在web.xml中配置的servlet-name 
+  getServletContext(); //获取ServletContext对象，该对象的作用看下面讲解
+  getInitParameter(String); //获取在servlet中初始化参数的值。这里注意与全局初始化参数的区分。这个获取的只是在该servlet下的初始化参数
+  ![](https://github.com/TrueOr/java/raw/master/java_web/picture/874710-20170216195140550-371826071.png)<br>
+  getInitParameterNames(); //获取在Servlet中所有初始化参数的名字，也就是key值，可以通过key值，来找到各个初始化参数的value值。注意返回的是枚举类型
+  ![](https://github.com/TrueOr/java/raw/master/java_web/picture/874710-20170217091747144-810654839.png)<br>
+  ![](https://github.com/TrueOr/java/raw/master/java_web/picture/874710-20170217091914597-1623014325.png)<br>
+  ![](https://github.com/TrueOr/java/raw/master/java_web/picture/874710-20170217091935300-1981582648.png)<br>
 注意：在上面我们所分析的源码过程中，我们就知道，其实可以不用先获得ServletConfig，然后在获取其各种参数，可以直接使用其方法，比如上面我们用的ServletConfig().getServletName();可以直接写成getServletName();而不用在先获取ServletConfig();了，原因就是在GenericServlet中，已经帮我们获取了这些数据，我们只需要直接拿就行。
 
 ##### ServletContext对象
